@@ -12,11 +12,11 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 
-public class AdditivePizza {
+public class CatalogAdditivePizza {
     private ArrayList<IngredientPizza> ingredientPizza = new ArrayList<>();
     private final String fileName = "productFood.json";
 
-    public AdditivePizza() {
+    public CatalogAdditivePizza() {
        ingredientPizza = loadProductFoodList(fileName);
     }
 
@@ -30,7 +30,7 @@ public class AdditivePizza {
         SaveFile.saveFile(fileName, strGson);
     }
 
-    public ArrayList<IngredientPizza> getProductFood() {
+    public ArrayList<IngredientPizza> getingredientPizza() {
         return ingredientPizza;
     }
 
