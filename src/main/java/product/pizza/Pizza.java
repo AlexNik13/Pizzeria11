@@ -1,4 +1,4 @@
-package pizza;
+package product.pizza;
 
 
 import ingredient.IngredientPizza;
