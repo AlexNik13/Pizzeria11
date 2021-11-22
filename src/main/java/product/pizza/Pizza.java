@@ -34,9 +34,20 @@ public class Pizza implements Product {
     }
 
     public void addIngredientPizza(IngredientPizza ingredient){
+        addCostIngredient(ingredient.getPrice());
         ingredientPizzas.add(new IngredientPizza(ingredient.getName(),
                                                     ingredient.getQuantity(),
                                                     ingredient.getPrice()));
+    }
+
+    private void addCostIngredient(double costIngredient) {
+        costSizeL += costIngredient;
+        costSizeXL += costIngredient;
+    }
+
+    public void printFromMenu(){
+        System.out.printf("%-13s\n%s\nРазмер X\\Xl. Цена  %-6.2f \\ %-6.2f грн\n",
+                name, description, costSizeL, costSizeXL);
     }
 
     public String getName() {
