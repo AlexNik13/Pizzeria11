@@ -9,30 +9,34 @@ import java.util.ArrayList;
 public class Customer {
     private ArrayList<Product> products = new ArrayList<>();
     private CatalogPizza catalogPizza = new CatalogPizza();
-    public void startOrder(){
 
+
+
+    public ArrayList<Product> buyPizzaMenu(){
         boolean menu = true;
         while (menu){
             System.out.println("Выберети пиццу.");
             catalogPizza.printMenuPizza();
-            System.out.printf("0  : Посчитать.");
-            System.out.printf("Сделайте выбор");
+            System.out.printf("0  : Посчитать.\n");
+            System.out.printf("Сделайте выбор:\n");
 
             int choice = Input.nextInt();
-            System.out.printf("Размер \n1  :X  \n2  :XL");
-            int size = Input.nextInt();
+
+
             if(choice == 0){
                 menu = false;
             }else {
+                System.out.printf("Размер \n1  :X  \n2  :XL\n");
+                int size = Input.nextInt();
                 if(size == 2){
                     buyPizzaXL(choice);
                 }else {
                     buyPizzaL(choice);
                 }
             }
-
         }
 
+        return products;
     }
 
     private void buyPizzaL(int choicePizza){

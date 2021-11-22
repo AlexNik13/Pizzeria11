@@ -1,17 +1,20 @@
+import customer.Customer;
 import ingredient.IngredientPizza;
+import product.Product;
 import product.pizza.Pizza;
 import product.pizza.SizePizza;
 
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
-        Pizza pizza = new Pizza("Meat", SizePizza.XL, 150, 250,"Meat/chasse");
 
-        System.out.println(pizza.getCost());
-        pizza.addIngredientPizza(new IngredientPizza("Cыр пармезан",
-                50,
-                50));
+        ArrayList<Product> products = new ArrayList<>();
 
-        System.out.println(pizza.getCost());
+        products =  new Customer().buyPizzaMenu();
 
+        for (Product product : products) {
+            System.out.println(product.getName() + " " + product.getCost());
+        }
     }
 }

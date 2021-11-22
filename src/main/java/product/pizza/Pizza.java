@@ -69,6 +69,7 @@ public class Pizza implements Product {
         return formatter.toString();
     }
 
+    @Override
     public String getName() {
         return name;
     }
@@ -77,6 +78,7 @@ public class Pizza implements Product {
         return sizePizza;
     }
 
+    @Override
     public double getCost(){
         if(sizePizza == SizePizza.L){
             return costSizeL;
