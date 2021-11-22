@@ -9,7 +9,7 @@ public class SaveFile {
 
         nameFile =wayFile +  nameFile;
 
-        try (FileOutputStream fileOutputStream = new FileOutputStream("src/main/java/BD/file/productFood.json")) {
+        try (FileOutputStream fileOutputStream = new FileOutputStream("src/main/java/BD/file/ingredientPizza.json")) {
             fileOutputStream.write(save.getBytes());
         } catch (Exception e) {
             throw new RuntimeException(e);

@@ -1,4 +1,4 @@
-package BD;
+package BD.menu;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 public class CatalogAdditivePizza {
     private ArrayList<IngredientPizza> ingredientPizza = new ArrayList<>();
-    private final String fileName = "productFood.json";
+    private final String fileName = "ingredientPizza.json";
 
     public CatalogAdditivePizza() {
        ingredientPizza = loadProductFoodList(fileName);
@@ -24,13 +24,13 @@ public class CatalogAdditivePizza {
         ingredientPizza.add(new IngredientPizza(name, quantity, price));
     }
 
-    public void saveBD_ProductFood() {
+    public void saveCatalogAdditivePizza() {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         String strGson = gson.toJson(ingredientPizza);
         SaveFile.saveFile(fileName, strGson);
     }
 
-    public ArrayList<IngredientPizza> getingredientPizza() {
+    public ArrayList<IngredientPizza> getIngredientPizza() {
         return ingredientPizza;
     }
 
