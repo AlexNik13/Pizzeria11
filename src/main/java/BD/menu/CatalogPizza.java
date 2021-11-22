@@ -8,7 +8,7 @@ import product.pizza.Pizza;
 import java.util.ArrayList;
 
 public class CatalogPizza {
-    private ArrayList<Pizza> pizzas;
+    private ArrayList<Pizza> pizzas = new ArrayList<>();
     private final String fileName = "pizza.json";
 
     public CatalogPizza() {
@@ -19,10 +19,12 @@ public class CatalogPizza {
         pizzas.add(new Pizza(name, costSizeL, costSizeXL, description));
     }
 
-    public void saveCatalogAdditivePizza() {
+    public void saveCatalogPizza() {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         String strGson = gson.toJson(pizzas);
         SaveFile.saveFile(fileName, strGson);
     }
+
+
 
 }
