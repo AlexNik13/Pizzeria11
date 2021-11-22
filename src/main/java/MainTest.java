@@ -2,10 +2,9 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
-import ingredient.ProductFood;
+import ingredient.IngredientPizza;
 
 import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
@@ -14,7 +13,7 @@ public class MainTest {
 
 
     public static void main(String[] args) {
-        ArrayList<ProductFood> integers = new ArrayList<>();
+        ArrayList<IngredientPizza> integers = new ArrayList<>();
 
        /* integers.add(new ProductFood("Помидорки", 20));
         integers.add(new ProductFood("Сыр", 250));
@@ -41,7 +40,7 @@ public class MainTest {
 
             System.out.println(reader);
 
-            integers = gson.fromJson(reader, new  TypeToken<ArrayList<ProductFood>>(){}.getType());
+            integers = gson.fromJson(reader, new  TypeToken<ArrayList<IngredientPizza>>(){}.getType());
 
 
         } catch (Exception e) {

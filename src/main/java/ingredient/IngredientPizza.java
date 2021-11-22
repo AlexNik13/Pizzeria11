@@ -1,10 +1,10 @@
 package ingredient;
 
-public class ProductFood {
+public class IngredientPizza implements Cloneable{
     private String name;
     private double price;
 
-    public ProductFood(String name, double price) {
+    public IngredientPizza(String name, double price) {
         this.name = name;
         this.price = price;
     }

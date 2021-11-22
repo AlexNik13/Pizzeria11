@@ -1,5 +1,5 @@
 package pizza;
 
 public enum SizePizza {
-    S, L, XL
+    L, XL
 }

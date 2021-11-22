@@ -1,14 +1,6 @@
 package dao;
 
-import BD.BD_ProductFood;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import ingredient.ProductFood;
-
 import java.io.*;
-import java.util.ArrayList;
 
 public class SaveFile {
     private static final String wayFile = "src/main/java/BD/file/";
