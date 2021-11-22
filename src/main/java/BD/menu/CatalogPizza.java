@@ -46,6 +46,12 @@ public class CatalogPizza {
         return ingredientPizzas;
     }
 
+    public void printMenuPizza(){
+        for (int i = 0; i < pizzas.size(); i++) {
+            System.out.printf("%-3d: %s\n", (i+1), pizzas.get(i).printFromMenu() );
+        }
+    }
+
     public ArrayList<Pizza> getPizzas() {
         return pizzas;
     }
