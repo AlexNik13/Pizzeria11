@@ -9,7 +9,8 @@ import java.util.Formatter;
 
 public class Pizza implements Product {
     private String name;
-    private SizePizza sizePizza ;
+    private SizePizza sizePizza;
+    private double costIngredient = 0;
     private double costSizeL;
     private double costSizeXL;
     private String description;
@@ -42,27 +43,22 @@ public class Pizza implements Product {
                 '}';
     }
 
-    public Product newPizzaSizeL(){
+    public Pizza newPizzaSizeL() {
         return new Pizza(name, SizePizza.L, costSizeL, costSizeXL, description);
     }
 
-    public Product newPizzaSizeXL(){
+    public Pizza newPizzaSizeXL() {
         return new Pizza(name, sizePizza.XL, costSizeL, costSizeXL, description);
     }
 
-    public void addIngredientPizza(IngredientPizza ingredient){
-        addCostIngredient(ingredient.getPrice());
-        ingredientPizzas.add(new IngredientPizza(ingredient.getName(),
-                                                    ingredient.getQuantity(),
-                                                    ingredient.getPrice()));
+
+    public void addListIngredientPizza(ArrayList<IngredientPizza> ingredientPizzas) {
+
+        this.ingredientPizzas.addAll(ingredientPizzas);
     }
 
-    private void addCostIngredient(double costIngredient) {
-        costSizeL += costIngredient;
-        costSizeXL += costIngredient;
-    }
 
-    public String printFromMenu(){
+    public String printFromMenu() {
         Formatter formatter = new Formatter();
         formatter.format("%-13s\n%s\nРазмер X\\Xl. Цена  %-6.2f \\ %-6.2f грн\n",
                 name, description, costSizeL, costSizeXL);
@@ -79,12 +75,17 @@ public class Pizza implements Product {
     }
 
     @Override
-    public double getCost(){
-        if(sizePizza == SizePizza.L){
-            return costSizeL;
+    public double getCost() {
+        costIngredient = 0;
+        for (IngredientPizza ingredientPizza : ingredientPizzas) {
+            costIngredient = +ingredientPizza.getPrice();
         }
-        if(sizePizza == SizePizza.XL){
-            return costSizeXL;
+
+        if (sizePizza == SizePizza.L) {
+            return costSizeL + costIngredient;
+        }
+        if (sizePizza == SizePizza.XL) {
+            return costSizeXL + costIngredient;
         }
 
         return 0;

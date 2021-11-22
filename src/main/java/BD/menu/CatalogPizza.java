@@ -53,11 +53,11 @@ public class CatalogPizza {
         }
     }
 
-    public Product getNewPizzaSizeL(int choicePizza){
+    public Pizza getNewPizzaSizeL(int choicePizza){
         return pizzas.get(choicePizza - 1).newPizzaSizeL();
     }
 
-    public Product getNewPizzaSizeXL(int choicePizza){
+    public Pizza getNewPizzaSizeXL(int choicePizza){
         return pizzas.get(choicePizza - 1).newPizzaSizeXL();
     }
 
