@@ -2,10 +2,11 @@ package product.pizza;
 
 
 import ingredient.IngredientPizza;
+import product.Product;
 
 import java.util.ArrayList;
 
-public class Pizza {
+public class Pizza implements Product {
     private String name;
     private SizePizza sizePizza;
     private double costSizeL;
