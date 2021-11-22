@@ -17,7 +17,7 @@ public class CatalogAdditivePizza {
     private final String fileName = "ingredientPizza.json";
 
     public CatalogAdditivePizza() {
-       ingredientPizza = loadProductFoodList(fileName);
+       ingredientPizza = loadIngredientPizzaList(fileName);
     }
 
     public void addNewIngredient(String name, int quantity, double price) {
@@ -34,7 +34,7 @@ public class CatalogAdditivePizza {
         return ingredientPizza;
     }
 
-    private ArrayList<IngredientPizza> loadProductFoodList(String fileName){
+    private ArrayList<IngredientPizza> loadIngredientPizzaList(String fileName){
         ArrayList<IngredientPizza> ingredientPizzas;
 
         JsonReader jsonReader;

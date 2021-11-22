@@ -29,6 +29,18 @@ public class Pizza implements Product {
         this.description = description;
     }
 
+    @Override
+    public String toString() {
+        return "Pizza{" +
+                "name='" + name + '\'' +
+                ", sizePizza=" + sizePizza +
+                ", costSizeL=" + costSizeL +
+                ", costSizeXL=" + costSizeXL +
+                ", description='" + description + '\'' +
+                ", ingredientPizzas=" + ingredientPizzas +
+                '}';
+    }
+
     public Product newPizzaSizeL(){
         return new Pizza(name, SizePizza.L, costSizeL, costSizeXL, description);
     }
