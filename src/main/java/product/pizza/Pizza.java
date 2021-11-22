@@ -29,8 +29,12 @@ public class Pizza implements Product {
         this.description = description;
     }
 
-    public Product newPizza(){
-        return new Pizza(name, costSizeL, costSizeXL, description);
+    public Product newPizzaSizeL(){
+        return new Pizza(name, SizePizza.L, costSizeL, costSizeXL, description);
+    }
+
+    public Product newPizzaSizeXL(){
+        return new Pizza(name, sizePizza.XL, costSizeL, costSizeXL, description);
     }
 
     public void addIngredientPizza(IngredientPizza ingredient){
@@ -58,12 +62,15 @@ public class Pizza implements Product {
         return sizePizza;
     }
 
-    public double getCostSizeL() {
-        return costSizeL;
-    }
+    public double getCost(){
+        if(sizePizza == SizePizza.L){
+            return costSizeL;
+        }
+        if(sizePizza == SizePizza.XL){
+            return costSizeXL;
+        }
 
-    public double getCostSizeXL() {
-        return costSizeXL;
+        return 0;
     }
 
     public String getDescription() {
