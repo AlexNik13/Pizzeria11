@@ -6,6 +6,7 @@ import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
 import dao.SaveFile;
 import ingredient.IngredientPizza;
+import product.Product;
 import product.pizza.Pizza;
 
 import java.io.FileInputStream;
@@ -50,6 +51,14 @@ public class CatalogPizza {
         for (int i = 0; i < pizzas.size(); i++) {
             System.out.printf("%-3d: %s\n", (i+1), pizzas.get(i).printFromMenu() );
         }
+    }
+
+    public Product getNewPizzaSizeL(int choicePizza){
+        return pizzas.get(choicePizza - 1).newPizzaSizeL();
+    }
+
+    public Product getNewPizzaSizeXL(int choicePizza){
+        return pizzas.get(choicePizza - 1).newPizzaSizeXL();
     }
 
     public ArrayList<Pizza> getPizzas() {

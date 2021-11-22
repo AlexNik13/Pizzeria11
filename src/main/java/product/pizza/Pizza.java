@@ -5,6 +5,7 @@ import ingredient.IngredientPizza;
 import product.Product;
 
 import java.util.ArrayList;
+import java.util.Formatter;
 
 public class Pizza implements Product {
     private String name;
@@ -61,9 +62,11 @@ public class Pizza implements Product {
         costSizeXL += costIngredient;
     }
 
-    public void printFromMenu(){
-        System.out.printf("%-13s\n%s\nРазмер X\\Xl. Цена  %-6.2f \\ %-6.2f грн\n",
+    public String printFromMenu(){
+        Formatter formatter = new Formatter();
+        formatter.format("%-13s\n%s\nРазмер X\\Xl. Цена  %-6.2f \\ %-6.2f грн\n",
                 name, description, costSizeL, costSizeXL);
+        return formatter.toString();
     }
 
     public String getName() {
