@@ -20,8 +20,8 @@ public class AdditivePizza {
        ingredientPizza = loadProductFoodList(fileName);
     }
 
-    public void addNewIngredient(String name, double price) {
-        ingredientPizza.add(new IngredientPizza(name, price));
+    public void addNewIngredient(String name, int quantity, double price) {
+        ingredientPizza.add(new IngredientPizza(name, quantity, price));
     }
 
     public void saveBD_ProductFood() {

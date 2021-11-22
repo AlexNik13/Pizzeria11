@@ -8,11 +8,18 @@ import java.util.ArrayList;
 
 public class Pizza implements Product {
     private String name;
-    private SizePizza sizePizza;
+    private SizePizza sizePizza ;
     private double costSizeL;
     private double costSizeXL;
     private String description;
     private ArrayList<IngredientPizza> ingredientPizzas = new ArrayList<>();
+
+    public Pizza(String name, double costSizeL, double costSizeXL, String description) {
+        this.name = name;
+        this.costSizeL = costSizeL;
+        this.costSizeXL = costSizeXL;
+        this.description = description;
+    }
 
     public Pizza(String name, SizePizza sizePizza, double costSizeL, double costSizeXL, String description) {
         this.name = name;
@@ -20,6 +27,16 @@ public class Pizza implements Product {
         this.costSizeL = costSizeL;
         this.costSizeXL = costSizeXL;
         this.description = description;
+    }
+
+    public Product newPizza(){
+        return new Pizza(name, costSizeL, costSizeXL, description);
+    }
+
+    public void addIngredientPizza(IngredientPizza ingredient){
+        ingredientPizzas.add(new IngredientPizza(ingredient.getName(),
+                                                    ingredient.getQuantity(),
+                                                    ingredient.getPrice()));
     }
 
     public String getName() {

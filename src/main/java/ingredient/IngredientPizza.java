@@ -2,10 +2,12 @@ package ingredient;
 
 public class IngredientPizza implements Cloneable{
     private String name;
+    private int quantity;
     private double price;
 
-    public IngredientPizza(String name, double price) {
+    public IngredientPizza(String name, int quantity, double price) {
         this.name = name;
+        this.quantity = quantity;
         this.price = price;
     }
 
@@ -13,16 +15,13 @@ public class IngredientPizza implements Cloneable{
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public int getQuantity() {
+        return quantity;
     }
+
 
     public double getPrice() {
         return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
     }
 
     @Override
