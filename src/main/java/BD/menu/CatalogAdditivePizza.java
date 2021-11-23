@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
+import helper.Input;
 import helper.SaveFile;
 import ingredient.IngredientPizza;
 
@@ -29,8 +30,15 @@ public class CatalogAdditivePizza {
         return ingredientPizza.get(choiceIngredient - 1).newIngredientPizza();
     }
 
-    public void addNewIngredient(String name, int quantity, double price) {
+    public void addNewIngredient() {
+        System.out.print("Введите название ингредиента: ");
+        String name = Input.nextSting();
+        System.out.print("Введите размер порции  в гр.: ");
+        int quantity = Input.nextInt();
+        System.out.println("Введите стоимость: ");
+        double price = Input.nextDouble();
         ingredientPizza.add(new IngredientPizza(name, quantity, price));
+        saveCatalogAdditivePizza();
     }
 
     public void saveCatalogAdditivePizza() {
@@ -39,9 +47,6 @@ public class CatalogAdditivePizza {
         SaveFile.saveFile(fileName, strGson);
     }
 
-    public ArrayList<IngredientPizza> getIngredientPizza() {
-        return ingredientPizza;
-    }
 
     private ArrayList<IngredientPizza> loadIngredientPizzaList(String fileName) {
         ArrayList<IngredientPizza> ingredientPizzas;

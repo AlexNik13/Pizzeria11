@@ -28,19 +28,13 @@ public class CatalogPizza {
 
     public void addNewPizza() {
         System.out.print("Ведите название пиццы: ");
-
         String name = Input.nextSting();
-
-        System.out.print("Ведите состав пиццы :");
-
+        System.out.print("Ведите состав пиццы: ");
         String description = Input.nextSting();
-
         System.out.print("Ведите цену стандартной пиццы: ");
         double costSizeL = Input.nextDouble();
         System.out.print("Ведите цену большой пиццы: ");
         double costSizeXL = Input.nextDouble();
-
-
         pizzas.add(new Pizza(name, costSizeL, costSizeXL, description));
         saveCatalogPizza();
     }

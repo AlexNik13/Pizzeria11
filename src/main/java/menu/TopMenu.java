@@ -18,6 +18,7 @@ public class TopMenu {
             System.out.println("1  : Новый клиент");
             System.out.println("2  : Истоия продаж");
             System.out.println("3  : Добавить новую пиццу");
+            System.out.println("4  : Добавить новый ингредиенты для пиццы ");
 
 
 
@@ -26,12 +27,17 @@ public class TopMenu {
                 case 1:
                     orders.addNewCheckFromClient();
                     break;
+
                 case 2:
                     System.out.println("SORRY DO NOT WORK");
                     break;
 
                 case 3:
                     new CatalogPizza().addNewPizza();
+                    break;
+
+                case 4:
+
                     break;
             }
         }
