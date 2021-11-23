@@ -1,23 +1,15 @@
 package orders;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import helper.SaveFile;
-import product.pizza.Pizza;
-
-
 import java.io.*;
 import java.util.ArrayList;
 
-public class Orders {
+public class Orders  {
     private ArrayList<Check> checks = new ArrayList<>();
     private final String fileName = "orders.json";
 
     public Orders() {
          //TODO Do not work
-        //     this.checks = loadCheckList(fileName);
+           this.checks = loadCheckList(fileName);
     }
 
     public void addNewCheckFromClient() {
@@ -25,10 +17,21 @@ public class Orders {
     }
 
     public void saveCatalogPizza() {
-        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+       /* Gson gson = new GsonBuilder().setPrettyPrinting().create();
         String strGson = gson.toJson(checks);
-        SaveFile.saveFile(fileName, strGson);
+        SaveFile.saveFile(fileName, strGson);*/
+
+        try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("src/main/java/BD/file/orders.dat")))
+        {
+            oos.writeObject(checks);
+        }
+        catch(Exception ex){
+
+            System.out.println(ex.getMessage());
+        }
     }
+
+
 
     public void printHistoryCheck() {
         for (Check check : checks) {
@@ -38,18 +41,18 @@ public class Orders {
 
     //TODO not work
     private ArrayList<Check> loadCheckList(String fileName) {
-        ArrayList<Check> ingredientPizzas;
-        JsonReader jsonReader;
-        Gson gson = new GsonBuilder().create();
-        try (FileInputStream fileInputStream = new FileInputStream("src/main/java/BD/file/" + fileName)) {
-            jsonReader = new JsonReader(new InputStreamReader(fileInputStream));
-            ingredientPizzas = gson.fromJson(jsonReader,
-                    new TypeToken<ArrayList<Check>>() {
-                    }.getType());
+        ArrayList<Check> ingredientPizzas = new ArrayList<>();
 
-        } catch (Exception e) {
-            throw new RuntimeException(e);
+        try(ObjectInputStream ois = new ObjectInputStream(new FileInputStream("src/main/java/BD/file/orders.dat")))
+        {
+            ingredientPizzas =(ArrayList<Check>)ois.readObject();
+
         }
+        catch(Exception ex){
+
+            System.out.println(ex.getMessage());
+        }
+
         return ingredientPizzas;
     }
 }

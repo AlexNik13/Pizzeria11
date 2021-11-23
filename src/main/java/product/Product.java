@@ -1,7 +1,9 @@
 package product;
 
 
-public interface Product {
+import java.io.Serializable;
+
+public interface Product extends Serializable {
     public String getName();
 
     public double getCost();

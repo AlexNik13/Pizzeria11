@@ -7,7 +7,7 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
-public class Check {
+public class Check implements Serializable {
     private ArrayList<Product> products = new ArrayList<>();
     private String numberCheck = LocalDateTime.now().toString().substring(0, 19);
     private double totalCost;
