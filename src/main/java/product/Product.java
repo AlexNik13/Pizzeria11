@@ -6,4 +6,6 @@ public interface Product {
     public double getCost();
 
     public String getDescription();
+
+    TypeProduct getTypeProduct();
 }

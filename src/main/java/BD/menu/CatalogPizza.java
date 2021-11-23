@@ -17,6 +17,8 @@ public class CatalogPizza {
 
     public CatalogPizza() {
         pizzas = loadPizzaList(fileName);
+      // Do not work. Why?
+      //  pizzas = (ArrayList<Pizza> ) SaveFile.<ArrayList<Pizza>>loadList(fileName);
     }
 
     public void addPizza(String name, double costSizeL, double costSizeXL, String description) {
