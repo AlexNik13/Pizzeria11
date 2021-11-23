@@ -11,16 +11,13 @@ public class Customer {
 
     public ArrayList<Product> buyPizza() {
         ArrayList<Product> productPizza = new ArrayList<>();
-
         Pizza pizza = null;
-
         do {
             pizza = new MenuBuyPizza().buyPizzaMenu();
             if (pizza != null) {
                 productPizza.add(pizza);
             }
         } while (pizza != null);
-
         return productPizza;
     }
 }

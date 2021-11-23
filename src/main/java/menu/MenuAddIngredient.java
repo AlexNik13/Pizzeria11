@@ -21,7 +21,7 @@ public class MenuAddIngredient {
             int choice = Input.nextInt();
 
             if (choice != 0) {
-                ingredientPizzas.add(catalogAdditivePizza.getIngredientPizza(choice));
+                ingredientPizzas.add(catalogAdditivePizza.createIngredientPizza(choice));
             } else {
                 menu = false;
             }

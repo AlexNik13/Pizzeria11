@@ -1,9 +1,11 @@
 package product.pizza;
 
+import com.google.gson.InstanceCreator;
 import ingredient.IngredientPizza;
 import product.Product;
 import product.TypeProduct;
 
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Formatter;
 
@@ -16,6 +18,7 @@ public class Pizza implements Product {
     private String description;
     private ArrayList<IngredientPizza> ingredientPizzas = new ArrayList<>();
     private final TypeProduct typeProduct = TypeProduct.PIZZA;
+
 
     public Pizza(String name, double costSizeL, double costSizeXL, String description) {
         this.name = name;
@@ -53,7 +56,7 @@ public class Pizza implements Product {
     }
 
     public void addListIngredientPizza(ArrayList<IngredientPizza> ingredientPizzas) {
-
+        name = name + " *";
         this.ingredientPizzas.addAll(ingredientPizzas);
     }
 
@@ -102,4 +105,6 @@ public class Pizza implements Product {
     public ArrayList<IngredientPizza> getIngredientPizzas() {
         return ingredientPizzas;
     }
+
+
 }

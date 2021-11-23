@@ -1,46 +1,41 @@
 package menu;
 
+import BD.menu.CatalogAdditivePizza;
 import BD.menu.CatalogPizza;
 import helper.Input;
 import orders.Orders;
 
 public class TopMenu {
-
     private Orders orders = new Orders();
 
-    public void mainMenu(){
-
-    }
-
-    public void start(){
+    public void start() {
         boolean menu = true;
-        while (menu){
+        while (menu) {
             System.out.println("1  : Новый клиент");
             System.out.println("2  : Истоия продаж");
             System.out.println("3  : Добавить новую пиццу");
             System.out.println("4  : Добавить новый ингредиенты для пиццы ");
 
-
-
+            System.out.println("0  : Выход ");
             int choice = Input.nextInt();
-            switch (choice){
+            switch (choice) {
+                case 0:
+                    orders.saveCatalogPizza();
+                    menu = false;
+                    break;
                 case 1:
                     orders.addNewCheckFromClient();
                     break;
-
                 case 2:
-                    System.out.println("SORRY DO NOT WORK");
+                    orders.printHistoryCheck();
                     break;
-
                 case 3:
                     new CatalogPizza().addNewPizza();
                     break;
-
                 case 4:
-
+                    new CatalogAdditivePizza().addNewIngredient();
                     break;
             }
         }
-
     }
 }

@@ -1,0 +1,60 @@
+[
+  {
+    "products": [
+      {
+        "name": "La П’єц *",
+        "sizePizza": "L",
+        "costIngredient": 88.0,
+        "costSizeL": 167.0,
+        "costSizeXL": 250.0,
+        "description": "соус томатный, ветчина, баварские колбаски, сыр моцарелла, колбаса салями, прошутто.",
+        "ingredientPizzas": [
+          {
+            "name": "Соус барбекю",
+            "quantity": 50,
+            "price": 19.0
+          },
+          {
+            "name": "Соус цезарь",
+            "quantity": 50,
+            "price": 19.0
+          },
+          {
+            "name": "Cыр пармезан",
+            "quantity": 50,
+            "price": 50.0
+          }
+        ],
+        "typeProduct": "PIZZA"
+      }
+    ],
+    "numberCheck": "2021-11-23T16:10:19",
+    "totalCost": 255.0
+  },
+  {
+    "products": [
+      {
+        "name": "Салями",
+        "sizePizza": "XL",
+        "costIngredient": 0.0,
+        "costSizeL": 130.0,
+        "costSizeXL": 210.0,
+        "description": "соус томатный, сыр моцарелла, колбаса салями.",
+        "ingredientPizzas": [],
+        "typeProduct": "PIZZA"
+      },
+      {
+        "name": "Диабола",
+        "sizePizza": "L",
+        "costIngredient": 0.0,
+        "costSizeL": 134.0,
+        "costSizeXL": 234.0,
+        "description": "соус томатный, сыр моцарелла, перец чили, колбаса пепперони.",
+        "ingredientPizzas": [],
+        "typeProduct": "PIZZA"
+      }
+    ],
+    "numberCheck": "2021-11-23T16:10:31",
+    "totalCost": 344.0
+  }
+]

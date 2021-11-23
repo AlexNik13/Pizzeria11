@@ -18,8 +18,6 @@ public class CatalogPizza {
 
     public CatalogPizza() {
         pizzas = loadPizzaList(fileName);
-      // Do not work. Why?
-      //  pizzas = (ArrayList<Pizza> ) SaveFile.<ArrayList<Pizza>>loadList(fileName);
     }
 
     public void addPizza(String name, double costSizeL, double costSizeXL, String description) {
@@ -39,24 +37,22 @@ public class CatalogPizza {
         saveCatalogPizza();
     }
 
-
-
-
     public void saveCatalogPizza() {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         String strGson = gson.toJson(pizzas);
         SaveFile.saveFile(fileName, strGson);
     }
 
-    private ArrayList<Pizza> loadPizzaList(String fileName){
+    private ArrayList<Pizza> loadPizzaList(String fileName) {
         ArrayList<Pizza> ingredientPizzas;
 
         JsonReader jsonReader;
-        Gson gson  = new GsonBuilder().create();
+        Gson gson = new GsonBuilder().create();
         try (FileInputStream fileInputStream = new FileInputStream("src/main/java/BD/file/" + fileName)) {
             jsonReader = new JsonReader(new InputStreamReader(fileInputStream));
             ingredientPizzas = gson.fromJson(jsonReader,
-                    new TypeToken<ArrayList<Pizza>>(){}.getType());
+                    new TypeToken<ArrayList<Pizza>>() {
+                    }.getType());
 
         } catch (Exception e) {
             throw new RuntimeException(e);
@@ -64,17 +60,17 @@ public class CatalogPizza {
         return ingredientPizzas;
     }
 
-    public void printMenuPizza(){
+    public void printMenuPizza() {
         for (int i = 0; i < pizzas.size(); i++) {
-            System.out.printf("%-3d: %s\n", (i+1), pizzas.get(i).printFromMenu() );
+            System.out.printf("%-3d: %s\n", (i + 1), pizzas.get(i).printFromMenu());
         }
     }
 
-    public Pizza getNewPizzaSizeL(int choicePizza){
+    public Pizza createPizzaSizeL(int choicePizza) {
         return pizzas.get(choicePizza - 1).newPizzaSizeL();
     }
 
-    public Pizza getNewPizzaSizeXL(int choicePizza){
+    public Pizza createPizzaSizeXL(int choicePizza) {
         return pizzas.get(choicePizza - 1).newPizzaSizeXL();
     }
 

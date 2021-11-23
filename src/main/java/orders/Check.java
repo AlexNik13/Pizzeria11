@@ -3,30 +3,32 @@ package orders;
 import customer.Customer;
 import product.Product;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class Check {
     private ArrayList<Product> products = new ArrayList<>();
-    private LocalDateTime date;
-    private final String numberCheck = LocalDateTime.now().toString().substring(0, 19);
+    private String numberCheck = LocalDateTime.now().toString().substring(0, 19);
     private double totalCost;
 
-    public Check() {
+    public Check start(){
         this.products = new Customer().buyPizza();
         countTotalCost();
+        printBriefCheck();
+        return this;
     }
 
     public void printBriefCheck(){
         System.out.println("Чек N: " + numberCheck);
         for (int i = 0; i < products.size(); i++) {
             System.out.printf("%-3d: %7s - %s\n\t%.2f\n",
-                    i,
+                    (i + 1),
                     products.get(i).getTypeProduct(),
                     products.get(i).getName(),
                     products.get(i).getCost());
         }
-        System.out.printf("\t\tИтого: &.2f\n", totalCost );
+        System.out.printf("\t\tИтого: %.2f\n", totalCost );
     }
 
     private void countTotalCost(){
@@ -36,4 +38,11 @@ public class Check {
         }
     }
 
+    public String getNumberCheck() {
+        return numberCheck;
+    }
+
+    public double getTotalCost() {
+        return totalCost;
+    }
 }

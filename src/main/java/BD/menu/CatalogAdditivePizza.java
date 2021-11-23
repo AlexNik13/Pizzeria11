@@ -26,7 +26,7 @@ public class CatalogAdditivePizza {
         }
     }
 
-    public IngredientPizza getIngredientPizza(int choiceIngredient) {
+    public IngredientPizza createIngredientPizza(int choiceIngredient) {
         return ingredientPizza.get(choiceIngredient - 1).newIngredientPizza();
     }
 

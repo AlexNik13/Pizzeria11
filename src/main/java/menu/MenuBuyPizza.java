@@ -3,7 +3,6 @@ package menu;
 import BD.menu.CatalogPizza;
 import helper.Input;
 import ingredient.IngredientPizza;
-import product.Product;
 import product.pizza.Pizza;
 
 import java.util.ArrayList;
@@ -19,9 +18,7 @@ public class MenuBuyPizza {
         catalogPizza.printMenuPizza();
         System.out.printf("0  : Посчитать.\n");
         System.out.printf("Сделайте выбор:\n");
-
         int choice = Input.nextInt();
-
         if (choice == 0) {
             menu = false;
         } else {
@@ -33,21 +30,20 @@ public class MenuBuyPizza {
                 return buyPizzaL(choice);
             }
         }
-
         return null;
     }
 
     private Pizza buyPizzaL(int choicePizza) {
-        Pizza pizza = catalogPizza.getNewPizzaSizeL(choicePizza);
-        if (isAddIngredientPizzas()) {
+        Pizza pizza = catalogPizza.createPizzaSizeL(choicePizza);
+        if (isWantAddIngredientPizzas()) {
             pizza.addListIngredientPizza(addIngredientPizzas());
         }
         return pizza;
     }
 
     private Pizza buyPizzaXL(int choicePizza) {
-        Pizza pizza = catalogPizza.getNewPizzaSizeXL(choicePizza);
-        if (isAddIngredientPizzas()) {
+        Pizza pizza = catalogPizza.createPizzaSizeXL(choicePizza);
+        if (isWantAddIngredientPizzas()) {
             pizza.addListIngredientPizza(addIngredientPizzas());
         }
         return pizza;
@@ -59,7 +55,7 @@ public class MenuBuyPizza {
         return ingredientPizzas;
     }
 
-    private boolean isAddIngredientPizzas() {
+    private boolean isWantAddIngredientPizzas() {
         System.out.println("Добавить добавки? \n1  : Да \n0  : Нет");
         int choice = Input.nextInt();
         if (choice != 0) {

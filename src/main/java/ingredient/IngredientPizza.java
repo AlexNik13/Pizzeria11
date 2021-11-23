@@ -31,7 +31,6 @@ public class IngredientPizza implements Cloneable {
         return quantity;
     }
 
-
     public double getPrice() {
         return price;
     }
