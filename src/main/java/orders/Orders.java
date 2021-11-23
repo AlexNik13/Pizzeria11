@@ -8,7 +8,6 @@ public class Orders  {
     private final String fileName = "orders.json";
 
     public Orders() {
-         //TODO Do not work
            this.checks = loadCheckList(fileName);
     }
 
@@ -39,7 +38,6 @@ public class Orders  {
         }
     }
 
-    //TODO not work
     private ArrayList<Check> loadCheckList(String fileName) {
         ArrayList<Check> ingredientPizzas = new ArrayList<>();
 
