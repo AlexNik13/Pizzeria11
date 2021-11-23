@@ -20,7 +20,6 @@ public class Check {
 
     public void printBriefCheck(){
         System.out.println("Чек N: " + numberCheck);
-
         for (int i = 0; i < products.size(); i++) {
             System.out.printf("%-3d: %7s - %s\n\t%.2f\n",
                     i,
@@ -28,6 +27,7 @@ public class Check {
                     products.get(i).getName(),
                     products.get(i).getCost());
         }
+        System.out.printf("\t\tИтого: &.2f\n", totalCost );
     }
 
     private void countTotalCost(){
