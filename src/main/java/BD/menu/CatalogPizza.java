@@ -4,9 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
-import dao.SaveFile;
-import ingredient.IngredientPizza;
-import product.Product;
+import helper.SaveFile;
 import product.pizza.Pizza;
 
 import java.io.FileInputStream;

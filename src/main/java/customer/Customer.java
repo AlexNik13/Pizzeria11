@@ -1,9 +1,5 @@
 package customer;
 
-import BD.menu.CatalogPizza;
-import helper.Input;
-import ingredient.IngredientPizza;
-import menu.MenuAddIngredient;
 import menu.MenuBuyPizza;
 import product.Product;
 import product.pizza.Pizza;
@@ -13,26 +9,18 @@ import java.util.ArrayList;
 public class Customer {
     private ArrayList<Product> products = new ArrayList<>();
 
-    public ArrayList<Product> buyPizza(){
+    public ArrayList<Product> buyPizza() {
         ArrayList<Product> productPizza = new ArrayList<>();
 
-        Pizza pizza = null ;
+        Pizza pizza = null;
 
         do {
-            pizza = new  MenuBuyPizza().buyPizzaMenu();
-            if(pizza != null){
+            pizza = new MenuBuyPizza().buyPizzaMenu();
+            if (pizza != null) {
                 productPizza.add(pizza);
             }
-        }while (pizza != null);
+        } while (pizza != null);
 
         return productPizza;
     }
-
-
-
-
-
-
-
-
 }

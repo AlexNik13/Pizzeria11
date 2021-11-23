@@ -15,24 +15,24 @@ public class MenuBuyPizza {
         boolean menu = true;
         Pizza pizza = null;
 
-            System.out.println("Выберети пиццу.");
-            catalogPizza.printMenuPizza();
-            System.out.printf("0  : Посчитать.\n");
-            System.out.printf("Сделайте выбор:\n");
+        System.out.println("Выберети пиццу.");
+        catalogPizza.printMenuPizza();
+        System.out.printf("0  : Посчитать.\n");
+        System.out.printf("Сделайте выбор:\n");
 
-            int choice = Input.nextInt();
+        int choice = Input.nextInt();
 
-            if (choice == 0) {
-                menu = false;
+        if (choice == 0) {
+            menu = false;
+        } else {
+            System.out.printf("Размер \n1  :X  \n2  :XL\n");
+            int size = Input.nextInt();
+            if (size == 2) {
+                return buyPizzaXL(choice);
             } else {
-                System.out.printf("Размер \n1  :X  \n2  :XL\n");
-                int size = Input.nextInt();
-                if (size == 2) {
-                    return buyPizzaXL(choice);
-                } else {
-                    return buyPizzaL(choice);
-                }
+                return buyPizzaL(choice);
             }
+        }
 
         return null;
     }
@@ -41,18 +41,16 @@ public class MenuBuyPizza {
         Pizza pizza = catalogPizza.getNewPizzaSizeL(choicePizza);
         ArrayList<IngredientPizza> ingredientPizzas = new ArrayList<>();
         System.out.println("Добавить добавки? \n1  :Да \n0  : Нет");
-
         int choice = Input.nextInt();
-        if(choice != 0){
+        if (choice != 0) {
             ingredientPizzas = new MenuAddIngredient().addIngredient();
             pizza.addListIngredientPizza(ingredientPizzas);
         }
-
         return pizza;
     }
 
     private Pizza buyPizzaXL(int choicePizza) {
-        Pizza pizza =  catalogPizza.getNewPizzaSizeXL(choicePizza);
+        Pizza pizza = catalogPizza.getNewPizzaSizeXL(choicePizza);
         return pizza;
     }
 }

@@ -2,7 +2,7 @@ package ingredient;
 
 import java.util.Formatter;
 
-public class IngredientPizza implements Cloneable{
+public class IngredientPizza implements Cloneable {
     private String name;
     private int quantity;
     private double price;
@@ -13,11 +13,11 @@ public class IngredientPizza implements Cloneable{
         this.price = price;
     }
 
-    public IngredientPizza newIngredientPizza(){
-        return new IngredientPizza(name, quantity,price );
+    public IngredientPizza newIngredientPizza() {
+        return new IngredientPizza(name, quantity, price);
     }
 
-    public String printFromMenu(){
+    public String printFromMenu() {
         Formatter formatter = new Formatter();
         formatter.format(" %-20s %-3d грам. %6.2f грн", name, quantity, price);
         return formatter.toString();

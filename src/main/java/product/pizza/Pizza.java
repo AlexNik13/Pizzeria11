@@ -1,8 +1,8 @@
 package product.pizza;
 
-
 import ingredient.IngredientPizza;
 import product.Product;
+import product.TypeProduct;
 
 import java.util.ArrayList;
 import java.util.Formatter;
@@ -15,6 +15,7 @@ public class Pizza implements Product {
     private double costSizeXL;
     private String description;
     private ArrayList<IngredientPizza> ingredientPizzas = new ArrayList<>();
+    private final TypeProduct typeProduct = TypeProduct.PIZZA;
 
     public Pizza(String name, double costSizeL, double costSizeXL, String description) {
         this.name = name;
@@ -57,7 +58,6 @@ public class Pizza implements Product {
         this.ingredientPizzas.addAll(ingredientPizzas);
     }
 
-
     public String printFromMenu() {
         Formatter formatter = new Formatter();
         formatter.format("%-13s\n%s\nРазмер X\\Xl. Цена  %-6.2f \\ %-6.2f грн\n",
@@ -87,7 +87,6 @@ public class Pizza implements Product {
         if (sizePizza == SizePizza.XL) {
             return costSizeXL + costIngredient;
         }
-
         return 0;
     }
 
@@ -95,7 +94,7 @@ public class Pizza implements Product {
         return description;
     }
 
-    public ArrayList<IngredientPizza> getProductFoods() {
+    public ArrayList<IngredientPizza> getIngredientPizzas() {
         return ingredientPizzas;
     }
 }
