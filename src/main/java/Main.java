@@ -11,10 +11,11 @@ public class Main {
 
         ArrayList<Product> products = new ArrayList<>();
 
-       products = new Customer().buyPizza();
+        products = new Customer().buyPizza();
 
         for (Product product : products) {
             System.out.println(product.getName() + " " + product.getCost());
+            System.out.println("SOSTAV : " + product.getDescription());
         }
     }
 }

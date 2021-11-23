@@ -15,9 +15,10 @@ public class MenuAddIngredient {
         boolean menu = true;
 
         while (menu) {
+            System.out.println();
             System.out.println("Выберите ингредиенты");
             catalogAdditivePizza.printMenuIngredient();
-
+            System.out.println("0  : Хватит");
             int choice = Input.nextInt();
 
             if (choice != 0) {

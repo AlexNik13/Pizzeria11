@@ -90,6 +90,7 @@ public class Pizza implements Product {
         return 0;
     }
 
+    @Override
     public String getDescription() {
         return description;
     }

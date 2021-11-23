@@ -4,4 +4,6 @@ public interface Product {
     public String getName();
 
     public double getCost();
+
+    public String getDescription();
 }

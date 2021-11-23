@@ -39,18 +39,33 @@ public class MenuBuyPizza {
 
     private Pizza buyPizzaL(int choicePizza) {
         Pizza pizza = catalogPizza.getNewPizzaSizeL(choicePizza);
-        ArrayList<IngredientPizza> ingredientPizzas = new ArrayList<>();
-        System.out.println("Добавить добавки? \n1  :Да \n0  : Нет");
-        int choice = Input.nextInt();
-        if (choice != 0) {
-            ingredientPizzas = new MenuAddIngredient().addIngredient();
-            pizza.addListIngredientPizza(ingredientPizzas);
+        if (isAddIngredientPizzas()) {
+            pizza.addListIngredientPizza(addIngredientPizzas());
         }
         return pizza;
     }
 
     private Pizza buyPizzaXL(int choicePizza) {
         Pizza pizza = catalogPizza.getNewPizzaSizeXL(choicePizza);
+        if (isAddIngredientPizzas()) {
+            pizza.addListIngredientPizza(addIngredientPizzas());
+        }
         return pizza;
     }
+
+    private ArrayList<IngredientPizza> addIngredientPizzas() {
+        ArrayList<IngredientPizza> ingredientPizzas = new ArrayList<>();
+        ingredientPizzas = new MenuAddIngredient().addIngredient();
+        return ingredientPizzas;
+    }
+
+    private boolean isAddIngredientPizzas() {
+        System.out.println("Добавить добавки? \n1  : Да \n0  : Нет");
+        int choice = Input.nextInt();
+        if (choice != 0) {
+            return true;
+        }
+        return false;
+    }
+
 }
