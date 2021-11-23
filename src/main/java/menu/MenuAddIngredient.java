@@ -8,7 +8,6 @@ import java.util.ArrayList;
 
 public class MenuAddIngredient {
 
-
     public ArrayList<IngredientPizza> addIngredient() {
         ArrayList<IngredientPizza> ingredientPizzas = new ArrayList<>();
         CatalogAdditivePizza catalogAdditivePizza = new CatalogAdditivePizza();

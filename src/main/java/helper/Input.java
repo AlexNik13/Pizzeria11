@@ -7,4 +7,12 @@ public class Input {
     public static int nextInt(){
         return in.nextInt();
     }
+
+    public static String nextSting(){
+        return in.nextLine();
+    }
+
+    public static double nextDouble(){
+        return in.nextDouble();
+    }
 }

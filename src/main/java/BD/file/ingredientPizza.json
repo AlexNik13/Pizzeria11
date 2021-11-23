@@ -1,0 +1,82 @@
+[
+  {
+    "name": "Соус барбекю",
+    "quantity": 50,
+    "price": 19.0
+  },
+  {
+    "name": "Соус цезарь",
+    "quantity": 50,
+    "price": 19.0
+  },
+  {
+    "name": "Cыр пармезан",
+    "quantity": 50,
+    "price": 50.0
+  },
+  {
+    "name": "Cыр моцарелла",
+    "quantity": 100,
+    "price": 38.0
+  },
+  {
+    "name": "Телятина",
+    "quantity": 50,
+    "price": 57.0
+  },
+  {
+    "name": "Ветчина",
+    "quantity": 50,
+    "price": 38.0
+  },
+  {
+    "name": "Прошутто",
+    "quantity": 50,
+    "price": 46.0
+  },
+  {
+    "name": "Грибы",
+    "quantity": 50,
+    "price": 19.0
+  },
+  {
+    "name": "Помидоры",
+    "quantity": 50,
+    "price": 18.0
+  },
+  {
+    "name": "Перец болгарский",
+    "quantity": 50,
+    "price": 24.0
+  },
+  {
+    "name": "Перец чили",
+    "quantity": 30,
+    "price": 24.0
+  },
+  {
+    "name": "Лук",
+    "quantity": 50,
+    "price": 10.0
+  },
+  {
+    "name": "Кукуруза",
+    "quantity": 50,
+    "price": 18.0
+  },
+  {
+    "name": "Куриное мясо",
+    "quantity": 50,
+    "price": 29.0
+  },
+  {
+    "name": "Колбаса салями",
+    "quantity": 50,
+    "price": 33.0
+  },
+  {
+    "name": "Лосось",
+    "quantity": 50,
+    "price": 59.0
+  }
+]

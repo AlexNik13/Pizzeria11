@@ -1,0 +1,66 @@
+[
+  {
+    "name": "La П’єц",
+    "costIngredient": 0.0,
+    "costSizeL": 167.0,
+    "costSizeXL": 250.0,
+    "description": "соус томатный, ветчина, баварские колбаски, сыр моцарелла, колбаса салями, прошутто.",
+    "ingredientPizzas": []
+  },
+  {
+    "name": "Кватро формаджи",
+    "costIngredient": 0.0,
+    "costSizeL": 177.0,
+    "costSizeXL": 270.0,
+    "description": "соус сливочный, пармезан, сыр моцарелла, сыр рикотта, сыр дорблю, грецкий орех, груша.",
+    "ingredientPizzas": []
+  },
+  {
+    "name": "Капричоза",
+    "costIngredient": 0.0,
+    "costSizeL": 146.0,
+    "costSizeXL": 246.0,
+    "description": "соус томатный, сыр моцарелла, ветчина, свежие грибы.",
+    "ingredientPizzas": []
+  },
+  {
+    "name": "Цезарио",
+    "costIngredient": 0.0,
+    "costSizeL": 186.0,
+    "costSizeXL": 286.0,
+    "description": "соус сливочный, помидоры, хрустящий салат, пармезан, куриное мясо, сыр моцарелла, перепелиные яйца",
+    "ingredientPizzas": []
+  },
+  {
+    "name": "Салями",
+    "costIngredient": 0.0,
+    "costSizeL": 130.0,
+    "costSizeXL": 210.0,
+    "description": "соус томатный, сыр моцарелла, колбаса салями.",
+    "ingredientPizzas": []
+  },
+  {
+    "name": "Диабола",
+    "costIngredient": 0.0,
+    "costSizeL": 134.0,
+    "costSizeXL": 234.0,
+    "description": "соус томатный, сыр моцарелла, перец чили, колбаса пепперони.",
+    "ingredientPizzas": []
+  },
+  {
+    "name": "Карбонара",
+    "costIngredient": 0.0,
+    "costSizeL": 145.0,
+    "costSizeXL": 245.0,
+    "description": "соус томатный, ветчина, запеченное яйцо, сыр моцарелла, боварские колбаски.",
+    "ingredientPizzas": []
+  },
+  {
+    "name": "Парма",
+    "costIngredient": 0.0,
+    "costSizeL": 169.0,
+    "costSizeXL": 269.0,
+    "description": "соус сливочный, пармезан, сыр моцарелла, прошутто, руккола.",
+    "ingredientPizzas": []
+  }
+]

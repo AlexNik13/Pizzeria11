@@ -5,7 +5,6 @@ import product.Product;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Currency;
 
 public class Check {
     private ArrayList<Product> products = new ArrayList<>();

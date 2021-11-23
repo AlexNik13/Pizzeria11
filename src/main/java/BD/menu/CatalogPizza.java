@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
+import helper.Input;
 import helper.SaveFile;
 import product.pizza.Pizza;
 
@@ -24,6 +25,28 @@ public class CatalogPizza {
     public void addPizza(String name, double costSizeL, double costSizeXL, String description) {
         pizzas.add(new Pizza(name, costSizeL, costSizeXL, description));
     }
+
+    public void addNewPizza() {
+        System.out.print("Ведите название пиццы: ");
+
+        String name = Input.nextSting();
+
+        System.out.print("Ведите состав пиццы :");
+
+        String description = Input.nextSting();
+
+        System.out.print("Ведите цену стандартной пиццы: ");
+        double costSizeL = Input.nextDouble();
+        System.out.print("Ведите цену большой пиццы: ");
+        double costSizeXL = Input.nextDouble();
+
+
+        pizzas.add(new Pizza(name, costSizeL, costSizeXL, description));
+        saveCatalogPizza();
+    }
+
+
+
 
     public void saveCatalogPizza() {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
