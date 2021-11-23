@@ -52,7 +52,6 @@ public class Pizza implements Product {
         return new Pizza(name, sizePizza.XL, costSizeL, costSizeXL, description);
     }
 
-
     public void addListIngredientPizza(ArrayList<IngredientPizza> ingredientPizzas) {
 
         this.ingredientPizzas.addAll(ingredientPizzas);
@@ -67,7 +66,7 @@ public class Pizza implements Product {
 
     @Override
     public String getName() {
-        return name;
+        return name + " " + sizePizza;
     }
 
     public SizePizza getSizePizza() {
@@ -78,7 +77,7 @@ public class Pizza implements Product {
     public double getCost() {
         costIngredient = 0;
         for (IngredientPizza ingredientPizza : ingredientPizzas) {
-            costIngredient = +ingredientPizza.getPrice();
+            costIngredient += ingredientPizza.getPrice();
         }
 
         if (sizePizza == SizePizza.L) {
@@ -93,6 +92,11 @@ public class Pizza implements Product {
     @Override
     public String getDescription() {
         return description;
+    }
+
+    @Override
+    public TypeProduct getTypeProduct() {
+        return typeProduct;
     }
 
     public ArrayList<IngredientPizza> getIngredientPizzas() {
