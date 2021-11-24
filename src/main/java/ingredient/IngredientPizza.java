@@ -2,7 +2,7 @@ package ingredient;
 
 import java.util.Formatter;
 
-public class IngredientPizza implements Cloneable {
+public class IngredientPizza  {
     private String name;
     private int quantity;
     private double price;
