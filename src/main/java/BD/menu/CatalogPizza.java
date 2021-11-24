@@ -17,11 +17,7 @@ public class CatalogPizza {
     private final String fileName = "pizza.json";
 
     public CatalogPizza() {
-        pizzas = loadPizzaList(fileName);
-    }
-
-    public void addPizza(String name, double costSizeL, double costSizeXL, String description) {
-        pizzas.add(new Pizza(name, costSizeL, costSizeXL, description));
+        pizzas = loadCatalogPizza(fileName);
     }
 
     public void addNewPizza() {
@@ -43,7 +39,7 @@ public class CatalogPizza {
         SaveFile.saveFile(fileName, strGson);
     }
 
-    private ArrayList<Pizza> loadPizzaList(String fileName) {
+    private ArrayList<Pizza> loadCatalogPizza(String fileName) {
         ArrayList<Pizza> ingredientPizzas;
 
         JsonReader jsonReader;
@@ -67,11 +63,11 @@ public class CatalogPizza {
     }
 
     public Pizza createPizzaSizeL(int choicePizza) {
-        return pizzas.get(choicePizza - 1).newPizzaSizeL();
+        return pizzas.get(choicePizza - 1).getNewPizzaSizeL();
     }
 
     public Pizza createPizzaSizeXL(int choicePizza) {
-        return pizzas.get(choicePizza - 1).newPizzaSizeXL();
+        return pizzas.get(choicePizza - 1).getNewPizzaSizeXL();
     }
 
     public ArrayList<Pizza> getPizzas() {

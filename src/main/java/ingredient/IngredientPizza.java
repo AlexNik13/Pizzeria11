@@ -13,7 +13,7 @@ public class IngredientPizza  {
         this.price = price;
     }
 
-    public IngredientPizza newIngredientPizza() {
+    public IngredientPizza getCopyIngredientPizza() {
         return new IngredientPizza(name, quantity, price);
     }
 

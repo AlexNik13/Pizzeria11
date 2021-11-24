@@ -36,7 +36,7 @@ public class MenuBuyPizza {
     private Pizza buyPizzaL(int choicePizza) {
         Pizza pizza = catalogPizza.createPizzaSizeL(choicePizza);
         if (isWantAddIngredientPizzas()) {
-            pizza.addListIngredientPizza(addIngredientPizzas());
+            pizza.addIngredient(addIngredientPizzas());
         }
         return pizza;
     }
@@ -44,7 +44,7 @@ public class MenuBuyPizza {
     private Pizza buyPizzaXL(int choicePizza) {
         Pizza pizza = catalogPizza.createPizzaSizeXL(choicePizza);
         if (isWantAddIngredientPizzas()) {
-            pizza.addListIngredientPizza(addIngredientPizzas());
+            pizza.addIngredient(addIngredientPizzas());
         }
         return pizza;
     }
