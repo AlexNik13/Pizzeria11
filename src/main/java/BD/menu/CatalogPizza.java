@@ -53,9 +53,9 @@ public class CatalogPizza implements CatalogItem {
         System.out.printf("Размер \n1  :L  \n2  :XL\n");
         int size = Input.nextInt();
         if (size == 2) {
-            item = (ITEM) pizzas.get(choiceItem - 1).getClonePizzaSizeL();
-        } else {
             item = (ITEM) pizzas.get(choiceItem - 1).getClonePizzaSizeXL();
+        } else {
+            item = (ITEM) pizzas.get(choiceItem - 1).getClonePizzaSizeL();
         }
         return item;
     }
