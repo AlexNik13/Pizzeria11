@@ -1,6 +1,7 @@
 package orders;
 
 import customer.Customer;
+import menu.MenuProduct;
 import product.Product;
 
 import java.io.Serializable;
@@ -13,7 +14,7 @@ public class Check implements Serializable {
     private double totalCost;
 
     public Check start(){
-        this.products = new Customer().buyPizza();
+        this.products = new MenuProduct().start();
         countTotalCost();
         printBriefCheck();
         return this;

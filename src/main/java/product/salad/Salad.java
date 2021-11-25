@@ -2,6 +2,7 @@ package product.salad;
 
 import product.Product;
 import product.TypeProduct;
+import product.pizza.ingredient.IngredientPizza;
 
 import java.util.Formatter;
 
@@ -11,11 +12,17 @@ public class Salad implements Product {
     private double cost;
     private TypeProduct typeProduct = TypeProduct.SALAD;
 
+    public Salad() {
+    }
 
     public Salad(String name, String description, double cost) {
         this.name = name;
         this.description = description;
         this.cost = cost;
+    }
+
+    public Salad getClone() {
+        return new Salad(name, description, cost);
     }
 
     @Override

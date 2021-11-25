@@ -1,6 +1,6 @@
 package customer;
 
-import menu.MenuBuyPizza;
+import menu.MenuPizza;
 import product.Product;
 import product.pizza.Pizza;
 
@@ -13,7 +13,7 @@ public class Customer {
         ArrayList<Product> productPizza = new ArrayList<>();
         Pizza pizza = null;
         do {
-            pizza = new MenuBuyPizza().buyPizzaMenu();
+            pizza = new MenuPizza().buyPizzaMenu();
             if (pizza != null) {
                 productPizza.add(pizza);
             }

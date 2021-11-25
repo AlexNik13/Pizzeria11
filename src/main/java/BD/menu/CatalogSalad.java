@@ -23,7 +23,6 @@ public class CatalogSalad implements CatalogItem {
 
     private ArrayList<Salad> loadCatalogItem(String fileName) {
         ArrayList<Salad> salads;
-
         JsonReader jsonReader;
         Gson gson = new GsonBuilder().create();
         try (FileInputStream fileInputStream = new FileInputStream("src/main/java/BD/file/" + fileName)) {
@@ -31,7 +30,6 @@ public class CatalogSalad implements CatalogItem {
             salads = gson.fromJson(jsonReader,
                     new TypeToken<ArrayList<Salad>>() {
                     }.getType());
-
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -59,7 +57,8 @@ public class CatalogSalad implements CatalogItem {
 
     @Override
     public <ITEM> ITEM cloneItem(ITEM item, int choiceItem) {
-        return null;
+        item = (ITEM) salads.get(choiceItem - 1).getClone();
+        return item;
     }
 
     @Override
