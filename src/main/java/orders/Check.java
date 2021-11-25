@@ -11,7 +11,14 @@ public class Check implements Serializable {
     private String numberCheck = LocalDateTime.now().toString().substring(0, 19);
     private double totalCost;
     private double sizeDiscount;
-    private boolean discount =  true;
+    private boolean discount =  false;
+
+    public Check() {
+    }
+
+    public Check(boolean discount) {
+        this.discount = discount;
+    }
 
     public Check start(){
         this.products = new MenuProduct().start();

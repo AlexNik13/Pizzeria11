@@ -51,6 +51,7 @@ public class Discount {
         System.out.print("Телефон клиента (063-369-25-14): ");
         String phone = Input.nextSting();
         customers.add(new Customer(name, phone));
+        saveDiscount();
     }
 
     public boolean  isExistsCustomerDiscount(String phone){

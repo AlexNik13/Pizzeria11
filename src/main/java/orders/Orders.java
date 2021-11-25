@@ -1,5 +1,7 @@
 package orders;
 
+import menu.MenuDiscount;
+
 import java.io.*;
 import java.util.ArrayList;
 
@@ -12,7 +14,7 @@ public class Orders {
     }
 
     public void addNewCheckFromClient() {
-        checks.add(new Check().start());
+        checks.add(new MenuDiscount().start());
     }
 
     public void saveOrders() {

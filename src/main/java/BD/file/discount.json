@@ -23,5 +23,10 @@
     "name": "Паша",
     "phone": "0637777777",
     "discountSize": 5
+  },
+  {
+    "name": "Kosha",
+    "phone": "0961111111",
+    "discountSize": 5
   }
 ]
