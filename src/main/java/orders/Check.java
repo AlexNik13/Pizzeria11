@@ -10,6 +10,8 @@ public class Check implements Serializable {
     private ArrayList<Product> products = new ArrayList<>();
     private String numberCheck = LocalDateTime.now().toString().substring(0, 19);
     private double totalCost;
+    private double sizeDiscount;
+    private boolean discount;
 
     public Check start(){
         this.products = new MenuProduct().start();
