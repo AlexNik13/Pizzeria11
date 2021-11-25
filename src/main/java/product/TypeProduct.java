@@ -1,5 +1,5 @@
 package product;
 
 public enum TypeProduct {
-    PIZZA
+    PIZZA, SALAD
 }

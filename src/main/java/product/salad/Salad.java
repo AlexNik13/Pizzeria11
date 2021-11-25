@@ -1,9 +1,13 @@
 package product.salad;
 
-public class Salad {
+import product.Product;
+import product.TypeProduct;
+
+public class Salad implements Product {
     private String name;
     private double cost;
     private String description;
+    private TypeProduct typeProduct = TypeProduct.SALAD;
 
     public Salad(String name, double cost, String description) {
         this.name = name;
@@ -11,32 +15,24 @@ public class Salad {
         this.description = description;
     }
 
+
+    @Override
     public String getName() {
         return name;
     }
 
+    @Override
     public double getCost() {
         return cost;
     }
 
+    @Override
     public String getDescription() {
         return description;
     }
 
-    public void setCost(double cost) {
-        this.cost = cost;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     @Override
-    public String toString() {
-        return "Salad{" +
-                "name='" + name + '\'' +
-                ", cost=" + cost +
-                ", description='" + description + '\'' +
-                '}';
+    public TypeProduct getTypeProduct() {
+        return null;
     }
 }
