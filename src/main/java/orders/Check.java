@@ -11,7 +11,7 @@ public class Check implements Serializable {
     private String numberCheck = LocalDateTime.now().toString().substring(0, 19);
     private double totalCost;
     private double sizeDiscount;
-    private boolean discount;
+    private boolean discount =  true;
 
     public Check start(){
         this.products = new MenuProduct().start();
@@ -30,12 +30,18 @@ public class Check implements Serializable {
                     products.get(i).getCost());
         }
         System.out.printf("\t\tИтого: %.2f\n", totalCost );
+        System.out.printf("\t\tСкидка: %.2f\n", sizeDiscount );
+        System.out.printf("\t\tК оплате: %.2f\n", totalCost - sizeDiscount);
     }
 
     private void countTotalCost(){
         totalCost = 0;
         for (Product product : products) {
             totalCost += product.getCost();
+        }
+
+        if(discount){
+            sizeDiscount = totalCost * 0.05;
         }
     }
 
@@ -44,6 +50,15 @@ public class Check implements Serializable {
     }
 
     public double getTotalCost() {
-        return totalCost;
+        return totalCost - sizeDiscount;
+    }
+
+    public void setDiscount(boolean discount) {
+        this.discount = discount;
+    }
+
+    // насколько так предпочтительно делать ?
+    public void isExistsDiscount(String phone){
+        setDiscount(new Discount().isExistsCustomerDiscount(phone));
     }
 }

@@ -12,7 +12,7 @@ public class Customer {
 
     public Customer(String name, String phone) {
         this.name = name;
-        this.phone = phone;
+        setPhone(phone);
         this.discountSize = 5;
     }
 

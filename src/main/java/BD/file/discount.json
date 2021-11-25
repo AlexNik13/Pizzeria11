@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Валера",
+    "phone": "1112222233",
+    "discountSize": 5
+  },
+  {
+    "name": "Катя",
+    "phone": "0631111111",
+    "discountSize": 5
+  },
+  {
+    "name": "Наташа",
+    "phone": "0633333333",
+    "discountSize": 5
+  },
+  {
+    "name": "Виталик",
+    "phone": "0634444444",
+    "discountSize": 5
+  },
+  {
+    "name": "Паша",
+    "phone": "0637777777",
+    "discountSize": 5
+  }
+]
