@@ -12,7 +12,7 @@ import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-public class CatalogPizza {
+public class CatalogPizza implements CatalogItem {
     private ArrayList<Pizza> pizzas = new ArrayList<>();
     private final String fileName = "pizza.json";
 
@@ -20,7 +20,8 @@ public class CatalogPizza {
         pizzas = loadCatalogPizza(fileName);
     }
 
-    public void addNewPizza() {
+    @Override
+    public void addNewCatalogItem() {
         System.out.print("Ведите название пиццы: ");
         String name = Input.nextSting();
         System.out.print("Ведите состав пиццы: ");
@@ -30,13 +31,35 @@ public class CatalogPizza {
         System.out.print("Ведите цену большой пиццы: ");
         double costSizeXL = Input.nextDouble();
         pizzas.add(new Pizza(name, costSizeL, costSizeXL, description));
-        saveCatalogPizza();
+        saveCatalogItem();
     }
 
-    public void saveCatalogPizza() {
+    @Override
+    public void saveCatalogItem() {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         String strGson = gson.toJson(pizzas);
         SaveFile.saveFile(fileName, strGson);
+    }
+
+
+
+    @Override
+    public void printMenuCatalogItem() {
+        for (int i = 0; i < pizzas.size(); i++) {
+            System.out.printf("%-3d: %s\n", (i + 1), pizzas.get(i).printFromMenu());
+        }
+    }
+
+    @Override
+    public <ITEM > ITEM cloneItem(ITEM item, int choiceItem){
+        System.out.printf("Размер \n1  :L  \n2  :XL\n");
+        int size = Input.nextInt();
+        if (size == 2) {
+            item = (ITEM) pizzas.get(choiceItem - 1).getClonePizzaSizeL();
+        } else {
+            item = (ITEM) pizzas.get(choiceItem - 1).getClonePizzaSizeXL();
+        }
+        return item;
     }
 
     private ArrayList<Pizza> loadCatalogPizza(String fileName) {
@@ -54,20 +77,6 @@ public class CatalogPizza {
             throw new RuntimeException(e);
         }
         return ingredientPizzas;
-    }
-
-    public void printMenuPizza() {
-        for (int i = 0; i < pizzas.size(); i++) {
-            System.out.printf("%-3d: %s\n", (i + 1), pizzas.get(i).printFromMenu());
-        }
-    }
-
-    public Pizza createPizzaSizeL(int choicePizza) {
-        return pizzas.get(choicePizza - 1).getNewPizzaSizeL();
-    }
-
-    public Pizza createPizzaSizeXL(int choicePizza) {
-        return pizzas.get(choicePizza - 1).getNewPizzaSizeXL();
     }
 
     public ArrayList<Pizza> getPizzas() {

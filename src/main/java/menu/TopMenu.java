@@ -30,10 +30,10 @@ public class TopMenu {
                     orders.printHistoryCheck();
                     break;
                 case 3:
-                    new CatalogPizza().addNewPizza();
+                    new CatalogPizza().addNewCatalogItem();
                     break;
                 case 4:
-                    new CatalogAdditivePizza().addNewIngredient();
+                    new CatalogAdditivePizza().addNewCatalogItem();
                     break;
             }
         }

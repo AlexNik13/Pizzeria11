@@ -7,6 +7,9 @@ public class IngredientPizza  {
     private int quantity;
     private double price;
 
+    public IngredientPizza() {
+    }
+
     public IngredientPizza(String name, int quantity, double price) {
         this.name = name;
         this.quantity = quantity;

@@ -12,7 +12,7 @@ import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-public class CatalogAdditivePizza {
+public class CatalogAdditivePizza implements CatalogItem{
     private ArrayList<IngredientPizza> ingredientPizza = new ArrayList<>();
     private final String fileName = "ingredientPizza.json";
 
@@ -20,17 +20,21 @@ public class CatalogAdditivePizza {
         ingredientPizza = loadCatalogAdditivePizza(fileName);
     }
 
-    public void printMenuIngredient() {
+    @Override
+    public void printMenuCatalogItem() {
         for (int i = 0; i < ingredientPizza.size(); i++) {
             System.out.printf("%-3d: %s\n", (i + 1), ingredientPizza.get(i).printFromMenu());
         }
     }
 
-    public IngredientPizza createIngredientPizza(int choiceIngredient) {
-        return ingredientPizza.get(choiceIngredient - 1).getCopyIngredientPizza();
+    @Override
+    public <ITEM > ITEM cloneItem(ITEM item, int choiceItem) {
+        item = (ITEM) ingredientPizza.get(choiceItem - 1).getCopyIngredientPizza();
+        return item;
     }
 
-    public void addNewIngredient() {
+    @Override
+    public void addNewCatalogItem() {
         System.out.print("Введите название ингредиента: ");
         String name = Input.nextSting();
         System.out.print("Введите размер порции  в гр.: ");
@@ -38,10 +42,11 @@ public class CatalogAdditivePizza {
         System.out.println("Введите стоимость: ");
         double price = Input.nextDouble();
         ingredientPizza.add(new IngredientPizza(name, quantity, price));
-        saveCatalogAdditivePizza();
+        saveCatalogItem();
     }
 
-    public void saveCatalogAdditivePizza() {
+    @Override
+    public void saveCatalogItem() {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         String strGson = gson.toJson(ingredientPizza);
         SaveFile.saveFile(fileName, strGson);

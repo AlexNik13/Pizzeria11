@@ -16,12 +16,12 @@ public class MenuAddIngredient {
         while (menu) {
             System.out.println();
             System.out.println("Выберите ингредиенты");
-            catalogAdditivePizza.printMenuIngredient();
+            catalogAdditivePizza.printMenuCatalogItem();
             System.out.println("0  : Хватит");
             int choice = Input.nextInt();
 
             if (choice != 0) {
-                ingredientPizzas.add(catalogAdditivePizza.createIngredientPizza(choice));
+                ingredientPizzas.add(catalogAdditivePizza.cloneItem(new IngredientPizza() ,choice));
             } else {
                 menu = false;
             }

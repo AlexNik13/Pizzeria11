@@ -15,6 +15,15 @@ public class Salad implements Product {
         this.description = description;
     }
 
+    @Override
+    public String toString() {
+        return "Salad{" +
+                "name='" + name + '\'' +
+                ", cost=" + cost +
+                ", description='" + description + '\'' +
+                ", typeProduct=" + typeProduct +
+                '}';
+    }
 
     @Override
     public String getName() {

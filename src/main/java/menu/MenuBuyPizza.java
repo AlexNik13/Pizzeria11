@@ -15,38 +15,21 @@ public class MenuBuyPizza {
         Pizza pizza = null;
 
         System.out.println("Выберети пиццу.");
-        catalogPizza.printMenuPizza();
+        catalogPizza.printMenuCatalogItem();
         System.out.printf("0  : Посчитать.\n");
         System.out.printf("Сделайте выбор:\n");
         int choice = Input.nextInt();
         if (choice == 0) {
             menu = false;
         } else {
-            System.out.printf("Размер \n1  :X  \n2  :XL\n");
-            int size = Input.nextInt();
-            if (size == 2) {
-                return buyPizzaXL(choice);
-            } else {
-                return buyPizzaL(choice);
+            pizza = catalogPizza.cloneItem(new Pizza(), choice);
+            if (isWantAddIngredientPizzas()) {
+                pizza.addIngredient(addIngredientPizzas());
             }
+
+            return pizza;
         }
         return null;
-    }
-
-    private Pizza buyPizzaL(int choicePizza) {
-        Pizza pizza = catalogPizza.createPizzaSizeL(choicePizza);
-        if (isWantAddIngredientPizzas()) {
-            pizza.addIngredient(addIngredientPizzas());
-        }
-        return pizza;
-    }
-
-    private Pizza buyPizzaXL(int choicePizza) {
-        Pizza pizza = catalogPizza.createPizzaSizeXL(choicePizza);
-        if (isWantAddIngredientPizzas()) {
-            pizza.addIngredient(addIngredientPizzas());
-        }
-        return pizza;
     }
 
     private ArrayList<IngredientPizza> addIngredientPizzas() {

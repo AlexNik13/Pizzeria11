@@ -16,6 +16,9 @@ public class Pizza implements Product {
     private ArrayList<IngredientPizza> ingredientPizzas = new ArrayList<>();
     private final TypeProduct typeProduct = TypeProduct.PIZZA;
 
+    public Pizza() {
+    }
+
     public Pizza(String name, double costSizeL, double costSizeXL, String description) {
         this.name = name;
         this.costSizeL = costSizeL;
@@ -43,11 +46,11 @@ public class Pizza implements Product {
                 '}';
     }
 
-    public Pizza getNewPizzaSizeL() {
+    public Pizza getClonePizzaSizeL() {
         return new Pizza(name, SizePizza.L, costSizeL, costSizeXL, description);
     }
 
-    public Pizza getNewPizzaSizeXL() {
+    public Pizza getClonePizzaSizeXL() {
         return new Pizza(name, sizePizza.XL, costSizeL, costSizeXL, description);
     }
 
