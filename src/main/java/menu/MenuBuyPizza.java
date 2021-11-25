@@ -2,7 +2,7 @@ package menu;
 
 import BD.menu.CatalogPizza;
 import helper.Input;
-import ingredient.IngredientPizza;
+import product.pizza.ingredient.IngredientPizza;
 import product.pizza.Pizza;
 
 import java.util.ArrayList;

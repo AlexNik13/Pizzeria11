@@ -1,6 +1,6 @@
 package product.pizza;
 
-import ingredient.IngredientPizza;
+import product.pizza.ingredient.IngredientPizza;
 import product.Product;
 import product.TypeProduct;
 import java.util.ArrayList;

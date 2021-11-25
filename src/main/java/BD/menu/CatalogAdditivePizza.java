@@ -6,7 +6,7 @@ import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
 import helper.Input;
 import helper.SaveFile;
-import ingredient.IngredientPizza;
+import product.pizza.ingredient.IngredientPizza;
 
 import java.io.FileInputStream;
 import java.io.InputStreamReader;

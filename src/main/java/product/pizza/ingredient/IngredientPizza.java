@@ -1,4 +1,4 @@
-package ingredient;
+package product.pizza.ingredient;
 
 import java.util.Formatter;
 
