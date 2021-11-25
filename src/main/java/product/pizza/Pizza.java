@@ -79,7 +79,7 @@ public class Pizza implements Product {
     public double getCost() {
         costIngredient = 0;
         for (IngredientPizza ingredientPizza : ingredientPizzas) {
-            costIngredient += ingredientPizza.getPrice();
+            costIngredient += ingredientPizza.getCost();
         }
 
         if (sizePizza == SizePizza.L) {

@@ -5,24 +5,24 @@ import java.util.Formatter;
 public class IngredientPizza  {
     private String name;
     private int quantity;
-    private double price;
+    private double cost;
 
     public IngredientPizza() {
     }
 
-    public IngredientPizza(String name, int quantity, double price) {
+    public IngredientPizza(String name, int quantity, double cost) {
         this.name = name;
         this.quantity = quantity;
-        this.price = price;
+        this.cost = cost;
     }
 
     public IngredientPizza getCopyIngredientPizza() {
-        return new IngredientPizza(name, quantity, price);
+        return new IngredientPizza(name, quantity, cost);
     }
 
     public String printFromMenu() {
         Formatter formatter = new Formatter();
-        formatter.format(" %-20s %-3d грам. %6.2f грн", name, quantity, price);
+        formatter.format(" %-20s %-3d грам. %6.2f грн", name, quantity, cost);
         return formatter.toString();
     }
 
@@ -34,15 +34,15 @@ public class IngredientPizza  {
         return quantity;
     }
 
-    public double getPrice() {
-        return price;
+    public double getCost() {
+        return cost;
     }
 
     @Override
     public String toString() {
         return "ProductFood{" +
                 "name='" + name + '\'' +
-                ", price=" + price +
+                ", price=" + cost +
                 '}';
     }
 }
