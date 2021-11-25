@@ -1,6 +1,5 @@
 package orders;
 
-import customer.Customer;
 import menu.MenuProduct;
 import product.Product;
 
