@@ -28,7 +28,6 @@ public class MenuProduct {
                     break;
             }
         }
-
         return products;
     }
 }

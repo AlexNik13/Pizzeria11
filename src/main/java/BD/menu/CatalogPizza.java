@@ -41,8 +41,6 @@ public class CatalogPizza implements CatalogItem {
         SaveFile.saveFile(fileName, strGson);
     }
 
-
-
     @Override
     public void printMenuCatalogItem() {
         for (int i = 0; i < pizzas.size(); i++) {
@@ -64,7 +62,6 @@ public class CatalogPizza implements CatalogItem {
 
     private ArrayList<Pizza> loadCatalogPizza(String fileName) {
         ArrayList<Pizza> ingredientPizzas;
-
         JsonReader jsonReader;
         Gson gson = new GsonBuilder().create();
         try (FileInputStream fileInputStream = new FileInputStream("src/main/java/BD/file/" + fileName)) {
@@ -72,14 +69,9 @@ public class CatalogPizza implements CatalogItem {
             ingredientPizzas = gson.fromJson(jsonReader,
                     new TypeToken<ArrayList<Pizza>>() {
                     }.getType());
-
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
         return ingredientPizzas;
-    }
-
-    public ArrayList<Pizza> getPizzas() {
-        return pizzas;
     }
 }

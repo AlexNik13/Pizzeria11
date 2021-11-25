@@ -3,29 +3,25 @@ package orders;
 import java.io.*;
 import java.util.ArrayList;
 
-public class Orders  {
+public class Orders {
     private ArrayList<Check> checks = new ArrayList<>();
     private final String fileName = "orders.json";
 
     public Orders() {
-           this.checks = loadCheckList(fileName);
+        this.checks = loadCheckList(fileName);
     }
 
     public void addNewCheckFromClient() {
         checks.add(new Check().start());
     }
 
-    public void saveCatalogPizza() {
-        try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("src/main/java/BD/file/orders.dat")))
-        {
+    public void saveOrders() {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("src/main/java/BD/file/orders.dat"))) {
             oos.writeObject(checks);
-        }
-        catch(Exception ex){
+        } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
     }
-
-
 
     public void printHistoryCheck() {
         for (Check check : checks) {
@@ -35,12 +31,10 @@ public class Orders  {
 
     private ArrayList<Check> loadCheckList(String fileName) {
         ArrayList<Check> ingredientPizzas = new ArrayList<>();
-        try(ObjectInputStream ois = new ObjectInputStream(new FileInputStream("src/main/java/BD/file/orders.dat")))
-        {
-            ingredientPizzas =(ArrayList<Check>)ois.readObject();
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("src/main/java/BD/file/orders.dat"))) {
+            ingredientPizzas = (ArrayList<Check>) ois.readObject();
 
-        }
-        catch(Exception ex){
+        } catch (Exception ex) {
 
             System.out.println(ex.getMessage());
         }

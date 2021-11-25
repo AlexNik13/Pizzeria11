@@ -2,7 +2,6 @@ package orders;
 
 import menu.MenuProduct;
 import product.Product;
-
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -19,7 +18,7 @@ public class Check implements Serializable {
         return this;
     }
 
-    public void printBriefCheck(){
+    private void printBriefCheck(){
         System.out.println("Чек N: " + numberCheck);
         for (int i = 0; i < products.size(); i++) {
             System.out.printf("%-3d: %7s - %s\n\t%.2f\n",

@@ -34,18 +34,6 @@ public class Pizza implements Product {
         this.description = description;
     }
 
-    @Override
-    public String toString() {
-        return "Pizza{" +
-                "name='" + name + '\'' +
-                ", sizePizza=" + sizePizza +
-                ", costSizeL=" + costSizeL +
-                ", costSizeXL=" + costSizeXL +
-                ", description='" + description + '\'' +
-                ", ingredientPizzas=" + ingredientPizzas +
-                '}';
-    }
-
     public Pizza getClonePizzaSizeL() {
         return new Pizza(name, SizePizza.L, costSizeL, costSizeXL, description);
     }
@@ -61,7 +49,7 @@ public class Pizza implements Product {
 
     public String printFromMenu() {
         Formatter formatter = new Formatter();
-        formatter.format("%-13s\n%s\nРазмер X\\Xl. Цена  %-6.2f \\ %-6.2f грн\n",
+        formatter.format("%-13s\n%s\nРазмер L\\Xl. Цена  %-6.2f \\ %-6.2f грн\n",
                 name, description, costSizeL, costSizeXL);
         return formatter.toString();
     }
@@ -71,17 +59,12 @@ public class Pizza implements Product {
         return name + " " + sizePizza;
     }
 
-    public SizePizza getSizePizza() {
-        return sizePizza;
-    }
-
     @Override
     public double getCost() {
         costIngredient = 0;
         for (IngredientPizza ingredientPizza : ingredientPizzas) {
             costIngredient += ingredientPizza.getCost();
         }
-
         if (sizePizza == SizePizza.L) {
             return costSizeL + costIngredient;
         }
@@ -101,7 +84,4 @@ public class Pizza implements Product {
         return typeProduct;
     }
 
-    public ArrayList<IngredientPizza> getIngredientPizzas() {
-        return ingredientPizzas;
-    }
 }

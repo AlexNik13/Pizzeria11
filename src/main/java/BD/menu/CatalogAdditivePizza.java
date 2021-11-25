@@ -29,7 +29,7 @@ public class CatalogAdditivePizza implements CatalogItem{
 
     @Override
     public <ITEM > ITEM cloneItem(ITEM item, int choiceItem) {
-        item = (ITEM) ingredientPizza.get(choiceItem - 1).getCopyIngredientPizza();
+        item = (ITEM) ingredientPizza.get(choiceItem - 1).getClone();
         return item;
     }
 
@@ -52,7 +52,6 @@ public class CatalogAdditivePizza implements CatalogItem{
         SaveFile.saveFile(fileName, strGson);
     }
 
-
     private ArrayList<IngredientPizza> loadCatalogAdditivePizza(String fileName) {
         ArrayList<IngredientPizza> ingredientPizzas;
 
@@ -63,7 +62,6 @@ public class CatalogAdditivePizza implements CatalogItem{
             ingredientPizzas = gson.fromJson(jsonReader,
                     new TypeToken<ArrayList<IngredientPizza>>() {
                     }.getType());
-
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

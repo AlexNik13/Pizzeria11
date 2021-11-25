@@ -26,16 +26,6 @@ public class Salad implements Product {
     }
 
     @Override
-    public String toString() {
-        return "Salad{" +
-                "name='" + name + '\'' +
-                ", cost=" + cost +
-                ", description='" + description + '\'' +
-                ", typeProduct=" + typeProduct +
-                '}';
-    }
-
-    @Override
     public String getName() {
         return name;
     }

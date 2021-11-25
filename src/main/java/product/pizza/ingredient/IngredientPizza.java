@@ -16,7 +16,7 @@ public class IngredientPizza  {
         this.cost = cost;
     }
 
-    public IngredientPizza getCopyIngredientPizza() {
+    public IngredientPizza getClone() {
         return new IngredientPizza(name, quantity, cost);
     }
 
